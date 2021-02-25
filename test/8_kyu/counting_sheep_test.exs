@@ -1,10 +1,10 @@
-defmodule CoutingSheepTest do
+defmodule CountingSheepTest do
   use ExUnit.Case
 
   test "basic" do
-    assert CoutingSheep.count_sheeps([true, false, true, false, true, false, true]) == 4
+    assert CountingSheep.count_sheeps([true, false, true, false, true, false, true]) == 4
 
-    assert CoutingSheep.count_sheeps([
+    assert CountingSheep.count_sheeps([
              true,
              true,
              true,
