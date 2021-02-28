@@ -4,9 +4,6 @@ defmodule PrinterErrors do
   end
 
   defp error_count(s) do
-    s
-    |> String.graphemes()
-    |> Enum.filter(&(&1 > "m"))
-    |> Enum.count()
+    Regex.scan(~r/[^a-m]/, s) |> Enum.join() |> String.length()
   end
 end
