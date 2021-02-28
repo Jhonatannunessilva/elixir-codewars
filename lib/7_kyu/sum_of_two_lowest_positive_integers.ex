@@ -1,6 +1,5 @@
 defmodule SumOfTwoLowestPositiveIntegers do
   def sum_two_smallest_numbers(numbers) do
-    [a, b | _] = Enum.sort(numbers)
-    a + b
+    numbers |> Enum.sort() |> Enum.take(2) |> Enum.sum()
   end
 end
