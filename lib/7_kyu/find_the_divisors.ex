@@ -1,10 +1,6 @@
 defmodule FindTheDivisors do
   def divisors(integer) do
-    divs =
-      Enum.reduce(2..(integer - 1), [], fn
-        number, acc when rem(integer, number) == 0 -> acc ++ [number]
-        _, acc -> acc
-      end)
+    divs = for n <- 2..(integer - 1), rem(integer, n) == 0, do: n
 
     case divs do
       [] -> "#{integer} is prime"
